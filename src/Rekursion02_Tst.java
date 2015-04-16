@@ -24,8 +24,10 @@ class Rekursion02_Tst {
       // zehner_Ziffer(-17, 0) ist gleich 7
       // zehner_Ziffer(-17, 1) ist gleich 1
       // zehner_Ziffer(-17, 2) ist gleich 0
-
-      return -1; // MUSS ERSETZT WERDEN
+	   
+	   
+	  if(s == 0) return (n > 0) ? n % 10:(n % 10)*-1;
+	  return zehner_Ziffer(n/10, s-1);
    }
    // ---------------------------------------------------------------------
    static public int anz_10_er_Ziffern(int n) {
@@ -38,8 +40,10 @@ class Rekursion02_Tst {
       // anz_10_er_Ziffern(  9) ist gleich 1
       // anz_10_er_Ziffern( 10) ist gleich 2
       // anz_10_er_Ziffern(725) ist gleich 3
+	   
+	   if(n / 10 == 0) return 1;
 
-      return -1; // MUSS ERSETZT WERDEN
+       return anz_10_er_Ziffern(n / 10) + 1;
    }
    // ---------------------------------------------------------------------
    static int b_er_Ziffer(int b, int n, int s) {
@@ -65,7 +69,8 @@ class Rekursion02_Tst {
       // b_er_Ziffer(16,171, 1) ist gleich 10
       // b_er_Ziffer(16,171, 2) ist gleich  0
 
-      return -1; // MUSS ERSETZT WERDEN
+	   if(s == 0) return (n > 0) ? n % b:(n % b)*-1;
+	   return b_er_Ziffer(b, n/b, s-1);
    }
    // ---------------------------------------------------------------------
    static public int anz_b_er_Ziffern(int b, int n) {
@@ -86,8 +91,10 @@ class Rekursion02_Tst {
       // anz_b_er_Ziffern( 7,   7) ist gleich 2
       // anz_b_er_Ziffern( 7,  48) ist gleich 2
       // anz_b_er_Ziffern( 7,  49) ist gleich 3
-
-      return -1; // MUSS ERSETZT WERDEN
+	   
+	   
+	   if(n / b == 0) return 1;
+	   return anz_b_er_Ziffern(b, n / b) + 1;
    }
    // ---------------------------------------------------------------------
    static public String als_10_er_Zahl(int n) {
@@ -112,8 +119,10 @@ class Rekursion02_Tst {
       // (als Belohnung) die folgende Aufgabe-04 ganz einfach.
 
       final String[] TAB = {"0","1","2","3","4","5","6","7","8","9"};
-
-      return "Noch fehlerhaft!"; // MUSS ERSETZT WERDEN
+      
+      if(n < 10) return TAB[n];
+      return  als_10_er_Zahl(n / 10) + TAB[n % 10];
+      
    }
    // ---------------------------------------------------------------------
    static public String als_b_er_Zahl(int b, int n) {
@@ -147,7 +156,8 @@ class Rekursion02_Tst {
          "R","S","T","U","V","W","X","Y","Z",
       };
 
-      return "Noch fehlerhaft!"; // MUSS ERSETZT WERDEN
+      if(n < b) return TAB[n];
+      return  als_b_er_Zahl(b, n / b) + TAB[n % b];
    }
    // ---------------------------------------------------------------------
    static private int anzFehler = 0;
@@ -302,17 +312,17 @@ class Rekursion02_Tst {
       printf("---------------------------------+--------------------+%n");
       printf("Aufruf der zu testenden Funktion | Ist-Erg.|Soll-Erg  |%n");
       printf("---------------------------------+---------+----------+%n");
-      tst_zehner_Ziffer();
-//       printf("-------------------------------------------+-----------%n");
-//       tst_anz_10_er_Ziffern();
-//       printf("-------------------------------------------+-----------%n");
-//       tst_b_er_Ziffer();
-//       printf("-------------------------------------------+-----------%n");
-//       tst_anz_b_er_Ziffern();
-//       printf("-------------------------------------------+-----------%n");
-//       tst_als_10_er_Zahl();
-//       printf("-------------------------------------------+-----------%n");
-//       tst_als_b_er_Zahl();
+//      tst_zehner_Ziffer();
+//	  printf("-------------------------------------------+-----------%n");
+//	  tst_anz_10_er_Ziffern();
+//	  printf("-------------------------------------------+-----------%n");
+//	  tst_b_er_Ziffer();
+//	  printf("-------------------------------------------+-----------%n");
+//	  tst_anz_b_er_Ziffern();
+//      printf("-------------------------------------------+-----------%n");
+//      tst_als_10_er_Zahl();
+//      printf("-------------------------------------------+-----------%n");
+      tst_als_b_er_Zahl();
       printf("-------------------------------------------+-----------%n");
       printf("Anzahl Fehler: %s%n", anzFehler);
       printf("-------------------------------------------------------%n");
