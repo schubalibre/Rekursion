@@ -121,6 +121,7 @@ class Rekursion02_Tst {
       final String[] TAB = {"0","1","2","3","4","5","6","7","8","9"};
       
       if(n < 10) return TAB[n];
+      //12345 % 10 = TAB[5] = 5 => n / 10 = 1234 % 10 = TAB[4] = 4 => n / 10 = 123 ........ 
       return  als_10_er_Zahl(n / 10) + TAB[n % 10];
       
    }
@@ -155,8 +156,9 @@ class Rekursion02_Tst {
          "I","J","K","L","M","N","O","P","Q",
          "R","S","T","U","V","W","X","Y","Z",
       };
-
+      // das array gibt hier ab 10 nur Buchstaben zurück..... n muss immer im Wertebereich bleiben
       if(n < b) return TAB[n];
+      //12345 % b = TAB[5] = 5 => n / b = 1234 % b = TAB[4] = 4 => n / b = 123 ........ 
       return  als_b_er_Zahl(b, n / b) + TAB[n % b];
    }
    // ---------------------------------------------------------------------
