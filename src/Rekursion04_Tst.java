@@ -21,15 +21,21 @@ class Rekursion04_Tst {
    }
    // ---------------------------------------------------------------------
    static int mul(int m, int n) {
-      // Liefert das Produkt von m und n:
-
-      return -1; // MUSS ERSETZT WERDEN
+	if (n == 0) {
+		return 0;                
+	} else {
+		return (mul(m, n-1)) + m;
+	}
    }
    // ---------------------------------------------------------------------
    static int pot(int m, int n) {
-      // Liefert die n-te Potenz von m (d.h. den Wert m hoch n):
-
-      return -1; // MUSS ERSETZT WERDEN
+	if (n == 0) {
+		return 1; 
+	} else if(n == 1){
+		return m;
+	}else {
+		return (mul(m, pot(m, n-1)));
+	}
    }
    // ---------------------------------------------------------------------
    static private int anzFehler = 0;
@@ -55,7 +61,7 @@ class Rekursion04_Tst {
          anzFehler++;
       }
 
-      printf("add(%d, %d), ist:%4d, soll:%4d %s%n", m, n, ist, soll, text);
+      printf("mul(%d, %d), ist:%4d, soll:%4d %s%n", m, n, ist, soll, text);
    }
    // ---------------------------------------------------------------------
    static private void tst_pot(int m, int n, int soll) {
@@ -67,7 +73,7 @@ class Rekursion04_Tst {
          anzFehler++;
       }
 
-      printf("add(%d, %d), ist:%4d, soll:%4d %s%n", m, n, ist, soll, text);
+      printf("pot(%d, %d), ist:%4d, soll:%4d %s%n", m, n, ist, soll, text);
    }
    // ---------------------------------------------------------------------
    static public void main(String[] args) {

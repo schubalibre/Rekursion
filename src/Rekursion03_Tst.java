@@ -18,7 +18,19 @@ class Rekursion03_Tst {
       //    nur aus waagerechten und/oder senkrechten Abschnitten besteht
       //    und keine Komponente kreuzt, die bereits ein 'X' enthaelt.
 
-      return; // MUSS ERSETZT WERDEN
+	   if(rrc[z][s] == 'X'){
+		   return;
+	   }else{
+		   rrc[z][s] = 'X';
+		   if(z < rrc.length-1 )
+			   fuelleAus(rrc, z+1, s);
+		   if(z > 0)
+			   fuelleAus(rrc, z-1, s);
+		   if(s < rrc[z].length-1 )
+			   fuelleAus(rrc, z, s+1);
+		   if(s > 0)
+			   fuelleAus(rrc, z, s-1);
+	   }
    }
    // ---------------------------------------------------------------------
    static public void gibAus(char[][] rrc) {
