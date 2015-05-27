@@ -13,7 +13,14 @@ class Rekursion04_Tst {
    // ---------------------------------------------------------------------
    static int add(int m, int n) {
       // Liefert die Summe von m und n:
-      if (n == 0) {
+	   // Bsp. add(3,5)
+       // 1. add(3, (5-1)) + 1
+	   // 2. add(3, (4-1)) + 1
+	   // 3. add(3, (3-1)) + 1
+	   // 4. add(3, (2-1)) + 1
+	   // 5. add(3, (1-1)) + 1
+	   // 6. 3
+	  if (n == 0) {
          return m;                 // m + 0 = m
       } else {
          return (add(m, n-1)) + 1; // m + n = (m + (n-1)) + 1
@@ -21,6 +28,13 @@ class Rekursion04_Tst {
    }
    // ---------------------------------------------------------------------
    static int mul(int m, int n) {
+	   // Bsp. mul(3,5)
+	   // 1. mul(3, (5-1)) + 3
+	   // 2. mul(3, (4-1)) + 3
+	   // 3. mul(3, (3-1)) + 3
+	   // 4. mul(3, (2-1)) + 3
+	   // 5. mul(3, (1-1)) + 3
+	   // 6. 0
 	if (n == 0) {
 		return 0;                
 	} else {
@@ -29,12 +43,19 @@ class Rekursion04_Tst {
    }
    // ---------------------------------------------------------------------
    static int pot(int m, int n) {
+	   // Bsp. mul(5,3)
+	   // 1. mul(5, pot(5,3-1)) = 5*25
+	   // 2. mul(5, pot(5,2-1)) = 5*5
+	   // 4. 5
 	if (n == 0) {
 		return 1; 
 	} else if(n == 1){
+		System.out.println("M ist " + m);
 		return m;
 	}else {
-		return (mul(m, pot(m, n-1)));
+		int a = mul(m, pot(m, n-1));
+		System.out.println("A ist " + a);
+		return (a);
 	}
    }
    // ---------------------------------------------------------------------
