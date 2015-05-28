@@ -19,12 +19,15 @@ class Rekursion05_Tst {
       // anzRobos(3) ist gleich 6
       // anzRobos(4) ist gleich 8
 	   
-	   if(tage == 0){
-		   return 3;
-	   }else{
-		  long i = anzRobos(tage-1);
-		  return i + i/3; 
-	   }
+	   
+	   // einfacher Fall - es sind 3 Roboter vorhanden
+	   	if(tage == 0) return 3;
+	   
+	   	// rekursiver Fall - da nur 3 Robert an einem Tag einen Roboter bauen können muss die Zahl, 
+	   	// die dem Rekursionsaufruf dazu addiert wird dur 3 geteilt werden. Und zwar pro der schon exestierenden Roboter. 
+		long i = anzRobos(tage-1);
+		return i + i/3; 
+
    }
    // ---------------------------------------------------------------------
    static long anzRobos(long n, long tage) {
@@ -48,8 +51,10 @@ class Rekursion05_Tst {
       // anzRobos(5, 5) ist gleich 10
       // anzRobos(5, 6) ist gleich 12
 
+	   // einfacher Fall
 	  if(tage == 0) return n;
 	   
+	  // rekursiver Fall - genau wie oben nur mit n Robotern
 	  long i = anzRobos(n, tage-1);
 	  return i + i/n; 
 	   
