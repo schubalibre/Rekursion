@@ -15,8 +15,11 @@ class Rekursion06_Tst {
       // anzWege(1, 1) ist gleich  2  (von (0,0) nach (1,1) gibt es  2 Wege)
       // anzWege(2, 1) ist gleich  3  (von (0,0) nach (2,1) gibt es  3 Wege)
       // anzWege(3, 4) ist gleich 10  (von (0,0) nach (3,4) gibt es 10 Wege)
-
-      return -1; // MUSS ERSETZT WERDEN
+	   
+	   if(x == 0 || y == 0) return 1;
+	   
+	   return anzWege(x, y-1) + anzWege(x-1, y);
+	   
    }
    // ----------------------------------------------------------------------
    static long anzPlusbaeume(int n) {

@@ -18,8 +18,13 @@ class Rekursion05_Tst {
       // anzRobos(2) ist gleich 5
       // anzRobos(3) ist gleich 6
       // anzRobos(4) ist gleich 8
-
-      return -1; // MUSS ERSETZT WERDEN
+	   
+	   if(tage == 0){
+		   return 3;
+	   }else{
+		  long i = anzRobos(tage-1);
+		  return i + i/3; 
+	   }
    }
    // ---------------------------------------------------------------------
    static long anzRobos(long n, long tage) {
@@ -43,7 +48,11 @@ class Rekursion05_Tst {
       // anzRobos(5, 5) ist gleich 10
       // anzRobos(5, 6) ist gleich 12
 
-      return -1; // MUSS ERSETZT WERDEN
+	  if(tage == 0) return n;
+	   
+	  long i = anzRobos(n, tage-1);
+	  return i + i/n; 
+	   
    }
    // ---------------------------------------------------------------------
    static private int anzFehler = 0;
