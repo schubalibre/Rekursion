@@ -31,7 +31,7 @@ class Rekursion06_Tst {
       // anzPlusbaeume(2) ist gleich 2
       // anzPlusbaeume(3) ist gleich 5
       // anzPlusbaeume(6) ist gleich 188
-
+//*
       return -1; // MUSS ERSETZT WERDEN
    }
    // ----------------------------------------------------------------------
