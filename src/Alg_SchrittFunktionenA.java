@@ -204,14 +204,8 @@ class Alg_SchrittFunktionenA { // "A" wie "Aufgabe"
    static public int stp07(int n) {return (n*n*3*n)+(5*n*n)+(4*n+7);} // MUSS ERSETZT WERDEN
    static public int stp08(int n) {return (n*n)*(n*n*n);} // MUSS ERSETZT WERDEN
    static public int stp09(int n) {return n;} // MUSS ERSETZT WERDEN
-   static public int stp10(int n) {
-	   if(n <=1) return 1;
-	   return 2*stp10(n-1) +1;
-   } // MUSS ERSETZT WERDEN
-   static public int stp11(int n) {
-	   if(n <=1) return 1;
-	   return 3*stp11(n-1) +1;
-   } // MUSS ERSETZT WERDEN
+   static public int stp10(int n) {return h(2,n)-1;}
+   static public int stp11(int n) {return glA(3,n)-1;}
    static public int stp12(int n) {return -99;} // MUSS ERSETZT WERDEN
    static public int stp13(int n) {return -99;} // MUSS ERSETZT WERDEN
    static public int stp14(int n) {return -99;} // MUSS ERSETZT WERDEN

@@ -46,10 +46,12 @@ class Rekursion06_Tst {
       // anzPlusbaeume(6) ist gleich 188
 
 	   if(n == 1) return 1;
-	   else if(n == 2) return 2;
 	   
-	   long i = anzPlusbaeume(n-1); 
-      return i * n;
+	   long a = 0;
+	   for(int i = 1;i < n;i++){
+		   a += anzPlusbaeume(n-i) + anzPlusbaeume(i);
+	   }
+	   return a;
 
    }
    // ----------------------------------------------------------------------
