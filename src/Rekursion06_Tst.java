@@ -47,11 +47,11 @@ class Rekursion06_Tst {
 
 	   if(n == 1) return 1;
 	   
-	   long a = 0;
+	   long anzahl = 1;
 	   for(int i = 1;i < n;i++){
-		   a += anzPlusbaeume(n-i) + anzPlusbaeume(i);
+		   anzahl += anzPlusbaeume(n-i) * anzPlusbaeume(i);
 	   }
-	   return a;
+	   return anzahl;
 
    }
    // ----------------------------------------------------------------------
