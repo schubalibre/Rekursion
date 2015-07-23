@@ -194,24 +194,24 @@ class Alg_SchrittFunktionenA { // "A" wie "Aufgabe"
    // Die SchrittFunktionen stp00, stp01, ...  ("stp" wie "step")
    // der Algorithmen       alg00, alg01, ...
    // ---------------------------------------------------------------------
-   static public int stp00(int n) {return n;} // MUSS ERSETZT WERDEN
-   static public int stp01(int n) {return 2*n;} // MUSS ERSETZT WERDEN
-   static public int stp02(int n) {return n*n;} // MUSS ERSETZT WERDEN
-   static public int stp03(int n) {return n*n*n;} // MUSS ERSETZT WERDEN
-   static public int stp04(int n) {return (n/2)*n*(n/2);} // MUSS ERSETZT WERDEN
-   static public int stp05(int n) {return 12*(n/2);} // MUSS ERSETZT WERDEN
-   static public int stp06(int n) {return (n+n*n)/2;} // MUSS ERSETZT WERDEN
-   static public int stp07(int n) {return (n*n*3*n)+(5*n*n)+(4*n+7);} // MUSS ERSETZT WERDEN
-   static public int stp08(int n) {return (n*n)*(n*n*n);} // MUSS ERSETZT WERDEN
-   static public int stp09(int n) {return n;} // MUSS ERSETZT WERDEN
+   static public int stp00(int n) {return n;}
+   static public int stp01(int n) {return 2*n;}
+   static public int stp02(int n) {return n*n;}
+   static public int stp03(int n) {return n*n*n;}
+   static public int stp04(int n) {return (n/2)*n*(n/2);}
+   static public int stp05(int n) {return 12*(n/2);}
+   static public int stp06(int n) {return (n+n*n)/2;}
+   static public int stp07(int n) {return (n*n*3*n)+(5*n*n)+(4*n+7);}
+   static public int stp08(int n) {return (n*n)*(n*n*n);}
+   static public int stp09(int n) {return n;}
    static public int stp10(int n) {
 	   if(n <=1) return 1;
 	   return 2*stp10(n-1) +1;
-   } // MUSS ERSETZT WERDEN
+   }
    static public int stp11(int n) {
 	   if(n <=1) return 1;
 	   return 3*stp11(n-1) +1;
-   } // MUSS ERSETZT WERDEN
+   }
    static public int stp12(int n) {return -99;} // MUSS ERSETZT WERDEN
    static public int stp13(int n) {return -99;} // MUSS ERSETZT WERDEN
    static public int stp14(int n) {return -99;} // MUSS ERSETZT WERDEN
